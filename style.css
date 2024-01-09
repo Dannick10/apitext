@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to top,rgb(93, 62, 133),rgb(31, 21, 36));
+    overflow: hidden;
+}
+
+#result{
+    background-color: rgb(221, 214, 193);
+    background: linear-gradient(rgb(155, 135, 135),rgb(187, 187, 187));
+    width: 30%;
+    height: 60%;
+    border-left: 3px solid rgb(34, 32, 32);
+    padding: 10px;
+    position: relative;
+ 
+}
+
+
+
+.msg,#table,#tableum{
+    color: rgb(5, 21, 51);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#table{
+    background-color: white;
+    font-size: 1em;
+    font-weight: normal;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 2px solid rgb(4, 5, 5);
+    width: 200px;
+    height: 80vh;
+    padding: 10px;
+    transition: 1s ease-out;
+}
+
+#table::before{
+    content: 'Mensagem Salva';
+    position: absolute;
+    top: 105%;
+    
+}
+
+#open{
+    padding: 0.5em 1em;
+    background-color: #726262;
+    border: none;
+    user-select: none;
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: all 0.5s linear;
+    color: #fff;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+
+.btn {
+    padding: 0.5em 1em;
+    background-color: #726262;
+    border: none;
+    user-select: none;
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: all 0.5s linear;
+    color: #fff;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.btn:hover::after, .btn:hover::before {
+    content: '';
+    background: linear-gradient(90deg, #46fca7 0%, #3F5EFB 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    animation: move-right-side 1s ease infinite;
+}
+
+.btn:hover::before {
+    background: linear-gradient(90deg, #82ec61 0%, #f7873c 100%);
+    inset: 0;
+    animation: move-left-side 1s ease infinite;
+    z-index: -2;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #00ffaa;
+}
+
+.close{
+right: 0;
+  top: 0;
+  transform: translate(230px);
+  position: absolute;
+  transition: 1s;
+ 
+}
+
+
+
+#salvar{
+    top: 80%;
+    left: 50%;
+    background-color: #3F5EFB;
+    position: absolute;
+
+}
+
+@media screen and (max-width: 500px) {
+   #table{
+    position: absolute;
+    width: 100px;
+    bottom: 0;
+   } 
+}
+
+@keyframes move-right-side {
+    0% {
+        inset: 0.3em 0 0 0.3em;
+    }
+
+    33% {
+        inset: 0 0.3em 0.3em 0; 
+    }
+        
+    66% {
+    
+        inset: 1em 0 0 0.5em; 
+    }
+
+    100% {
+        inset:0  1em 0.5em 0;
+    }
+}
+
+@keyframes move-left-side {
+    0% {
+        right: -1em;
+        top: -0.5em;
+    }
+
+    33% {
+        bottom: -1em;
+        left: -0.5em;
+    }
+
+    66% {
+        top: 0;
+        right:-0.7;
+    }
+
+    100% {
+        right: -1em;
+        top: -0.5em;
+    }
+}
